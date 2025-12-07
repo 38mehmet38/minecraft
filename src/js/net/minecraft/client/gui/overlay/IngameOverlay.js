@@ -139,7 +139,7 @@ export default class IngameOverlay extends Gui {
 
         // If lines empty, compute full details
         if (lines.length === 0) {
-        let world = this.minecraft.world;
+            let world = this.minecraft.world;
         let player = this.minecraft.player;
         let worldRenderer = this.minecraft.worldRenderer;
 
@@ -230,11 +230,12 @@ export default class IngameOverlay extends Gui {
             "Sesler: " + soundsPlaying + "/" + soundsLoaded,
             "Zaman: " + world.time % 24000 + " (Gün " + Math.floor(world.time / 24000) + ")",
             "İmleç: " + this.minecraft.window.focusState.getName()
-        ]
+            ];
 
             // Update cache
             this._debugCache.time = now;
             this._debugCache.lines = lines;
+        }
 
         // Hit result
         let hit = worldRenderer.lastHitResult;
@@ -270,7 +271,6 @@ export default class IngameOverlay extends Gui {
             // Draw line
             this.drawString(stack, lines[i], 2, 2 + FontRenderer.FONT_HEIGHT * i, 0xffe0e0e0, false);
         }
-
     }
 
     renderRightDebugOverlay(stack) {

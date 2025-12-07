@@ -7,6 +7,7 @@ import TreeGenerator from "./structure/TreeGenerator.js";
 import BigTreeGenerator from "./structure/BigTreeGenerator.js";
 import Generator from "./Generator.js";
 import ChunkSection from "../ChunkSection.js";
+import VillageGenerator from "./structure/VillageGenerator.js";
 
 export default class WorldGenerator extends Generator {
 
@@ -14,6 +15,7 @@ export default class WorldGenerator extends Generator {
         super(world, seed);
 
         this.caveGenerator = new CaveGenerator(world, seed);
+        this.villageGenerator = new VillageGenerator(world, seed);
 
         this.terrainGenerator4 = new NoiseGeneratorOctaves(this.random, 16);
         this.terrainGenerator5 = new NoiseGeneratorOctaves(this.random, 16);
@@ -53,6 +55,19 @@ export default class WorldGenerator extends Generator {
     populateChunk(chunkX, chunkZ) {
         // Set seed for chunk
         this.setChunkSeed(chunkX, chunkZ);
+
+        // Generate villages (10% chance per chunk)
+        if (this.random.nextInt(10) === 0) {
+            let villageX = chunkX * 16 + this.random.nextInt(16);
+            let villageZ = chunkZ * 16 + this.random.nextInt(16);
+            let villageY = this.world.getHeightAt(villageX, villageZ);
+            
+            // Only generate villages on grass/dirt blocks
+            let block = this.world.getBlockAt(villageX, villageY - 1, villageZ);
+            if (block === BlockRegistry.GRASS || block === BlockRegistry.DIRT) {
+                this.villageGenerator.generateVillageAtBlock(villageX, villageY, villageZ);
+            }
+        }
 
         // Access noise data for population
         let absoluteX = chunkX * 16;

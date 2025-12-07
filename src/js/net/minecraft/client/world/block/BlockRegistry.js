@@ -14,6 +14,7 @@ import BlockGlass from "./type/BlockGlass.js";
 import SoundGlass from "./sound/SoundGlass.js";
 import BlockGravel from "./type/BlockGravel.js";
 import BlockCobblestone from "./type/BlockCobblestone.js";
+import BlockIronOre from "./type/BlockIronOre.js";
 
 export class BlockRegistry {
 
@@ -41,5 +42,6 @@ export class BlockRegistry {
         BlockRegistry.WATER = new BlockWater(9, 7);
         BlockRegistry.SAND = new BlockSand(12, 8)
         BlockRegistry.TORCH = new BlockTorch(50, 9)
+        BlockRegistry.IRON_ORE = new BlockIronOre(21, 30); // 21: yeni id, 30: örnek texture index
     }
 }
