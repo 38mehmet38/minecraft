@@ -1,2 +1,2 @@
 # minecraft
-python ile tamamı türkler tarafından geliştirilmiş minecraft klonu
+javascript ile tamamı türkler tarafından geliştirilmiş minecraft klonu

@@ -1,0 +1,27 @@
+{
+  "name": "minecraft-clone",
+  "version": "1.0.0",
+  "description": "Türkler tarafından geliştirilmiş Minecraft klonu",
+  "type": "module",
+  "main": "src/js/Start.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite"
+  },
+  "keywords": [
+    "minecraft",
+    "game",
+    "three.js",
+    "webgl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "three": "^0.128.0"
+  }
+}
