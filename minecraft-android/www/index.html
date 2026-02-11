@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft</title>
+    
+    <!-- Viewport for mobile optimization -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover"/>
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- App icons and manifest -->
+    <link rel="icon" type="image/x-icon" href="src/resources/favicon.ico">
+    <link rel="apple-touch-icon" href="src/resources/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+        
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        body, button, input {
+            font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #content {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Prevent scrolling on mobile -->
+        html, body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background" class="fullscreen"></div>
+    <div id="content">
+        <div id="canvas-container" class="fullscreen"></div>
+    </div>
+
+    <!-- Cordova -->
+    <script src="cordova.js"></script>
+
+    <!-- Libraries -->
+    <script type="module" src="libraries/pako.es5.min.js"></script>
+    <script type="module" src="libraries/aes.js"></script>
+    <script type="module" src="libraries/asn1.js"></script>
+    <script type="module" src="libraries/bigint-mod-arith.js"></script>
+    <script type="module" src="libraries/sha1.min.js"></script>
+
+    <!-- Minecraft -->
+    <script type="module" src="src/js/Start.js"></script>
+
+    <script>
+        // Android optimization
+        document.addEventListener("deviceready", function() {
+            console.log("Cordova is ready!");
+            
+            // Lock screen orientation to landscape
+            if (typeof screen !== 'undefined' && screen.orientation) {
+                try {
+                    screen.orientation.lock('landscape');
+                } catch(e) {
+                    console.log("Cannot lock orientation: " + e);
+                }
+            }
+            
+            // Prevent status bar hiding on scroll
+            if (typeof StatusBar !== 'undefined') {
+                StatusBar.hide();
+            }
+        }, false);
+        
+        // Disable context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        }, false);
+        
+        // Prevent accidental back button press
+        document.addEventListener("backbutton", function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</body>
+
+</html>

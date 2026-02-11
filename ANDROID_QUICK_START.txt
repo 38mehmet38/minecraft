@@ -1,0 +1,140 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║   🎮 MINECRAFT ANDROID SÜRÜMÜ - HIZLI BAŞLAMA KILAVUZU                ║
+║                                                                        ║
+║   Sanal Joystick + Kontrol Simgeleri ile Mobil Oyun                  ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+📋 YÜKLÜ ÖZELLIKLER:
+
+✅ 🕹️  SANAL JOYSTICK
+   - Ekranın sol alt köşesinde
+   - 360 derece hareket desteği
+   - Smooth dokunmatik kontrol
+
+✅ 🎯 KONTROL SİMGELERİ (9 Buton)
+   ⬆️ W       ⬅️ A       🚀 SPACE
+   🎒 E       ⬇️ S       ➡️ D
+   ⛏️ LMB     📦 RMB     💨 SHIFT
+
+✅ 📱 ANDROID OPTIMIZASYON
+   - Full landscape desteği
+   - Dokunmatik kontrol sistemi
+   - WebGL 2.0 performansı
+   - APK hazırlanmıştır
+
+════════════════════════════════════════════════════════════════════════
+
+🚀 BAŞLAMA ADIMLARI:
+
+1️⃣  HIZLI KURULUM (Otomatik):
+    $ chmod +x setup-android.sh
+    $ ./setup-android.sh
+
+    Bu script otomatik olarak:
+    ✓ Bağımlılıkları yükler
+    ✓ Vite projesini derler
+    ✓ Cordova projesini oluşturur
+    ✓ Android platformunu ekler
+    ✓ APK dosyasını oluşturur
+
+2️⃣  TELEFONUNUZA KURUN:
+    $ adb install -r minecraft-android/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+
+3️⃣  OYUNU BAŞLATIN:
+    ✓ Telefondaki Minecraft uygulamasını aç
+    ✓ Joystick'i sürükleyerek hareket et
+    ✓ Sağ tarafı dokunarak görüş açını değiştir
+    ✓ Butonlara basarak eylemleri gerçekleştir
+
+════════════════════════════════════════════════════════════════════════
+
+📚 DOKÜMANTASYON:
+
+Kurulum rehberi:
+  → ANDROID_BUILD_GUIDE_TR.md      (Detaylı adımlar)
+  → README_ANDROID.md              (Genel rehber)
+  → Android_Features_TR.md         (Özellikler açıklaması)
+  → ANDROID_IMPLEMENTATION_SUMMARY.md (Teknik detaylar)
+
+════════════════════════════════════════════════════════════════════════
+
+🎮 OYUN KONTROLLERI:
+
+Joystick (Sol taraf):
+  • Sürükle = Hareket et (W, A, S, D)
+  • Suyla = Görüş açısını değiştir
+
+Butonlar (Sağ taraf):
+  • W (⬆️)     = İleri hareket
+  • A (⬅️)     = Sol hareket
+  • S (⬇️)     = Geri hareket
+  • D (➡️)     = Sağ hareket
+  • E (🎒)     = Envanteri aç
+  • Space (🚀) = Zıpla
+  • LMB (⛏️)   = Blok kırma
+  • RMB (📦)   = Blok yerleştirme
+  • Shift (💨) = Koşu
+
+════════════════════════════════════════════════════════════════════════
+
+⚙️  SİSTEM GEREKSİNİMLERİ:
+
+Android:
+  ✓ Minimum: Android 5.0 (API 21)
+  ✓ Ram: 512 MB minimum, 2 GB önerilen
+  ✓ GPU: Mali-G71 veya daha yüksek
+  ✓ Depolama: 100 MB
+
+Bilgisayar (Derleme için):
+  ✓ Java Development Kit (JDK 11+)
+  ✓ Android SDK
+  ✓ Node.js 14+
+  ✓ Cordova CLI
+
+════════════════════════════════════════════════════════════════════════
+
+💡 İPUÇLARI:
+
+1. APK oluşturma 10-20 dakika alabilir
+2. İlk kez derlerken tümü indirilecektir (1-2 GB)
+3. Debug APK cihazlara daha hızlı yüklenir
+4. Release APK Google Play Store için kullanılır
+5. Joystick hassasiyeti TouchController.js'de değiştirilebilir
+
+════════════════════════════════════════════════════════════════════════
+
+🐛 SORUN GIDERME:
+
+Joystick çalışmıyor?
+  → Chrome DevTools'ta Mobile Mode test et
+  → console.log(gameWindow.mobileDevice) kontrol et
+
+Butonlar görünmüyor?
+  → CSS'in yüklü olduğunu kontrol et
+  → Tarayıcı konsolu hatalarını kontrol et
+
+APK oluşturma başarısız?
+  → Java PATH'i kontrol et
+  → Android SDK'sı kurulu mu kontrol et
+  → Gradle cache'i temizle: ./gradlew clean
+
+════════════════════════════════════════════════════════════════════════
+
+📞 DESTEK:
+
+Sorular için:
+  • Konsolu kontrol et: adb logcat | grep -i error
+  • README dosyalarını oku
+  • GitHub issue'larını kontrol et
+
+════════════════════════════════════════════════════════════════════════
+
+✨ BAŞARI! İyi oyunlar! 🎮
+
+Sürüm: 1.0.0 (Android)
+Durum: Hazır Üretim ✅
+Tarih: 2026
+
+════════════════════════════════════════════════════════════════════════

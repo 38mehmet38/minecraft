@@ -8,7 +8,11 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "dev": "vite"
+    "dev": "vite",
+    "android:create": "cordova create minecraft-android com.minecraft.clone MinecraftClone",
+    "android:add": "cd minecraft-android && cordova platform add android",
+    "android:build": "cd minecraft-android && cordova build android",
+    "android:release": "cd minecraft-android && cordova build android --release"
   },
   "keywords": [
     "minecraft",
@@ -19,7 +23,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "cordova": "^12.0.0"
   },
   "dependencies": {
     "three": "^0.128.0"
